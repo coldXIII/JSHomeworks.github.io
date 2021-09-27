@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="conv.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>Currency Converter</header>
+      <form action="">
+        <div class="amount">
+          <p>enter amount</p>
+          <input type="text" id="amount" />
+        </div>
+        <div class="droplist">
+          <div class="from">
+            <p>from</p>
+            <div class="select">
+              <img src="https://www.countryflags.io/ua/flat/64.png" />
+              <select name="" id="select">
+                <option value="UAH">UAH</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="PLN">PLN</option>
+              </select>
+            </div>
+          </div>
+          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="to">
+            <p>to</p>
+            <div class="select">
+              <img src="https://www.countryflags.io/us/flat/64.png" />
+              <select name="" id="select2">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="UAH">UAH</option>
+                <option value="PLN">PLN</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="exchange-rate">1 USD = 26.8 UAH</div>
+        <button onclick="myFunc();">get exchange rate</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+      function myFunc() {
+        let amount = document.getElementById('amount').value;
+        let currency = document.getElementById('select').value;
+        let currency2 = document.getElementById('select2').value;
+
+        if (currency == 'UAH' && currency2 == 'USD') {
+          alert((+amount / 26.7).toFixed(2));
+        } else if (currency == 'UAH' && currency2 == 'EUR') {
+          alert((+amount / 31.4).toFixed(2));
+        } else if (currency == 'UAH' && currency2 == 'PLN') {
+          alert((+amount / 6.8).toFixed(2));
+        } else if (currency == 'UAH' && currency2 == 'UAH') {
+          alert((+amount).toFixed(2));
+        } else if (currency == 'USD' && currency2 == 'USD') {
+          alert((+amount).toFixed(2));
+        } else if (currency == 'USD' && currency2 == 'EUR') {
+          alert((+amount / 1.2).toFixed(2));
+        } else if (currency == 'USD' && currency2 == 'UAH') {
+          alert((+amount * 26.7).toFixed(2));
+        } else if (currency == 'USD' && currency2 == 'PLN') {
+          alert((+amount * 4).toFixed(2));
+        } else if (currency == 'EUR' && currency2 == 'UAH') {
+          alert((+amount * 31.4).toFixed(2));
+        } else if (currency == 'EUR' && currency2 == 'USD') {
+          alert((+amount * 1.2).toFixed(2));
+        } else if (currency == 'EUR' && currency2 == 'EUR') {
+          alert((+amount).toFixed(2));
+        } else if (currency == 'EUR' && currency2 == 'PLN') {
+          alert((+amount * 5).toFixed(2));
+        } else if (currency == 'PLN' && currency2 == 'UAH') {
+          alert((+amount * 6.8).toFixed(2));
+        } else if (currency == 'PLN' && currency2 == 'USD') {
+          alert((+amount / 4).toFixed(2));
+        } else if (currency == 'PLN' && currency2 == 'EUR') {
+          alert((+amount / 5).toFixed(2));
+        } else if (currency == 'PLN' && currency2 == 'PLN') {
+          alert(+amount.toFixed(2));
+        }
+      }
+    </script>
+  </body>
+</html>

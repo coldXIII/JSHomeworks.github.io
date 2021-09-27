@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-align: center;
+        color: #333;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+      }
+    </style>
+    <script>
+      const num = {
+        numerator: prompt('enter the first numerator'),
+        denominator: prompt('enter the first denominator'),
+      };
+      const num2 = {
+        numerator: prompt('enter the second numerator'),
+        denominator: prompt('enter the second denominator'),
+      };
+
+      function Fraction(upNumber, downNumber) {
+        return { upNumber: upNumber, downNumber: downNumber };
+      }
+      let firstNumber = Fraction(num.numerator, num.denominator);
+      let secondNumber = Fraction(num2.numerator, num2.denominator);
+
+      function plusFraction(obj1, obj2) {
+        let resultUpNumber =
+          obj1.upNumber * obj2.downNumber + obj2.upNumber * obj1.downNumber;
+        let resultDownNumber =
+          (obj1.downNumber * obj2.downNumber +
+            obj2.downNumber * obj1.downNumber) /
+          2;
+        document.write(
+          `The result of addition = ${resultUpNumber}/${resultDownNumber}<br>`
+        );
+      }
+      function subtractFraction(obj1, obj2) {
+        let resultUpNumber =
+          obj1.upNumber * obj2.downNumber - obj2.upNumber * obj1.downNumber;
+        let resultDownNumber =
+          (obj1.downNumber * obj2.downNumber +
+            obj2.downNumber * obj1.downNumber) /
+          2;
+        document.write(
+          `The result of subtracting = ${resultUpNumber}/${resultDownNumber}<br>`
+        );
+      }
+      function multiFraction(obj1, obj2) {
+        let resultUpNumber = obj1.upNumber * obj2.upNumber;
+        let resultDownNumber = obj1.downNumber * obj2.downNumber;
+        document.write(
+          `The result of multiplication = ${resultUpNumber}/${resultDownNumber}<br>`
+        );
+      }
+      function divideFraction(obj1, obj2) {
+        let resultUpNumber = obj1.upNumber * obj2.downNumber;
+        let resultDownNumber = obj2.upNumber * obj1.downNumber;
+        document.write(
+          `The result of dividing = ${resultUpNumber}/${resultDownNumber}<br>`
+        );
+      }
+      function reduce(obj1, obj2) {
+        let gcd = 0;
+        let gcd2 = 0;
+
+        for (let i = 1; i <= num.numerator && i <= num.denominator; i++) {
+          if (num.numerator % i == 0 && num.denominator % i == 0) {
+            gcd = i;
+          }
+        }
+        for (let i = 1; i <= num2.numerator && i <= num2.denominator; i++) {
+          if (num2.numerator % i == 0 && num2.denominator % i == 0) {
+            gcd2 = i;
+          }
+        }
+
+        document.write(
+          `The result of reducing is:  ${num.numerator / gcd} / ${
+            num.denominator / gcd
+          } and ${num2.numerator / gcd2} / ${num2.denominator / gcd2}`
+        );
+      }
+
+      plusFraction(firstNumber, secondNumber);
+      subtractFraction(firstNumber, secondNumber);
+      multiFraction(firstNumber, secondNumber);
+      divideFraction(firstNumber, secondNumber);
+      reduce();
+    </script>
+  </body>
+</html>

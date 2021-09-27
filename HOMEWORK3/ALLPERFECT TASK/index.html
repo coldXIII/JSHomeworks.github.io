@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      }
+    </style>
+    <script>
+      function allPerfect() {
+        let numMin = +prompt('enter the number');
+        let numMax = +prompt('enter the number');
+        document.write(
+          'All perfect numbers between ' + numMin + ' and ' + numMax + ' are: '
+        );
+        for (let i = numMin; i <= numMax; i++) {
+          let res = 0;
+          for (let j = numMin; j < i; j++) {
+            if (i % j == 0) {
+              res += j;
+            }
+          }
+          if (res == i) {
+            document.write(i + '  ');
+          }
+        }
+      }
+      allPerfect();
+    </script>
+  </body>
+</html>

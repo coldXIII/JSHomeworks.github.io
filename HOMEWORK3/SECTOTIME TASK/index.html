@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      }
+    </style>
+    <script>
+      function secondsToTime() {
+        var seconds = prompt('Please, enter some quantity of seconds');
+        var date = new Date(seconds * 1000);
+        var hh = date.getUTCHours();
+        var mm = date.getUTCMinutes();
+        var ss = date.getSeconds();
+
+        if (hh < 10) {
+          hh = '0' + hh;
+        }
+        if (mm < 10) {
+          mm = '0' + mm;
+        }
+        if (ss < 10) {
+          ss = '0' + ss;
+        }
+        var time = hh + 'hours ' + mm + 'minutes ' + ss + 'seconds ';
+        document.write(time);
+      }
+      secondsToTime();
+    </script>
+  </body>
+</html>

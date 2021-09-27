@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #334d50, #cbcaa5);
+      }
+    </style>
+    <script>
+      let num1 = +prompt('Enter first number');
+      let num2 = +prompt('And second...');
+      let gcd = 0 ;
+
+      for (let i = 1; i <= num1 && i <= num2; i++) {
+        if (num1 % i == 0 && num2 % i == 0) {
+          gcd = i;
+        }
+      }
+
+      document.write(
+        `the Greatest Common Divisor of ${num1} and ${num2} is ${gcd}.`
+      );
+
+         </script>
+  </body>
+</html>

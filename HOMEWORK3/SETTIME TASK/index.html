@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    }
+  </style>
+  <body>
+    <script>
+      function dateTime(hours, minutes, seconds) {
+        var hours = prompt('enter hours');
+        var minutes = prompt('and minutes...');
+        var seconds = prompt('..and seconds');
+        if (minutes == '' && seconds == '') {
+          document.write(hours + ':' + '00' + ':' + '00');
+        }else{
+
+        document.write(hours + ':' + minutes + ':' + seconds);
+      }
+      }
+      dateTime();
+
+   
+    </script>
+  </body>
+</html>

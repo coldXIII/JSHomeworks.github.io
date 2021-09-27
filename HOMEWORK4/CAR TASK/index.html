@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-align: center;
+        color: #333;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+      }
+    </style>
+    <script>
+      const car = {
+        name: 'BMW',
+        color: 'black',
+        age: 16,
+        speed: 120,
+      };
+
+      let myCar = function () {
+        return (
+          'Let me introduce my girl:<br><br>  ' +
+          'Her name is ' +
+          car.name +
+          '<br>' +
+          'Her skin is ' +
+          car.color +
+          '<br>' +
+          'She is ' +
+          car.age +
+          '<br>' +
+          'and she can run  ' +
+          car.speed +
+          ' km per hour <br> <br>'
+        );
+      };
+
+      document.write(myCar());
+      //path..................
+
+      const pathToGo = {
+        path: +prompt('enter the distance you want to go...'),
+        speed: 120,
+      };
+      const calc = function (params) {
+        const time = params.path / params.speed;
+        const timeToRest = time / 4;
+
+        return time + timeToRest;
+      };
+      document.write(
+        'If you want  ride her, you will need near ' +
+          parseInt(calc(pathToGo)) +
+          ' hours to reach your goal'
+      );
+    </script>
+  </body>
+</html>

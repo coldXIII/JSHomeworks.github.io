@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const year = prompt('PLEASE ENTER YOUR BIRTHYEAR');
+
+      const age = 2021 - year;
+      if (age <= 2) {
+        document.write('YOU ARE A CHILD');
+      } else if (age > 2 && age <= 18) {
+        document.write('YOU ARE A TEENAGER');
+      } else if (age > 18 && age < 60) {
+        document.write('YOU ARE AN ADULT');
+      } else if (age >= 60 && age < 100) {
+        document.write('YOU ARE SO OLD, MAN...');
+      } else {
+        document.write('There Can Be Only One...');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        text-align: center;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      }
+    </style>
+    <script>
+      function dateDiff(date1, date2) {
+        date1 = new Date(prompt('enter the date mm.dd.yy'));
+        date2 = new Date(prompt('enter the date mm.dd.yy'));
+        var diff = (date2 - date1) / 1000;
+        diff = Math.abs(Math.floor(diff));
+
+        var days = Math.floor(diff / (24 * 60 * 60));
+
+        document.write(
+          'There are <br>  ' + days + ' days ' + 'between these dates'
+        );
+      }
+      dateDiff();
+    </script>
+  </body>
+</html>

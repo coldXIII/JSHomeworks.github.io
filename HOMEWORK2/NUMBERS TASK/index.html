@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #334d50, #cbcaa5);
+      }
+    </style>
+    <script>
+      var numPos = 0;
+      var numNeg = 0;
+      var numZero = 0;
+      var numEven = 0;
+      var numOdd = 0;
+
+      for (let i = 0; i < 5; i++) {
+        let num = prompt('enter 5 numbers');
+        if (num > 0) {
+          numPos++;
+        }
+        if (num < 0) {
+          numNeg++;
+        }
+        if (num == 0) {
+          numZero++;
+        }
+        if (num % 2 == 0) {
+          numEven++;
+        }
+        if (num % 2 !== 0) {
+          numOdd++;
+        }
+      }
+
+      document.write('number of positive numbers:' + numPos + '<br>');
+      document.write('number of negative numbers:' + numNeg + '<br>');
+      document.write('number of zeros:' + numZero + '<br>');
+      document.write('number of even numbers:' + numEven + '<br>');
+      document.write('number of odd numbers:' + numOdd + '<br>');
+    </script>
+  </body>
+</html>

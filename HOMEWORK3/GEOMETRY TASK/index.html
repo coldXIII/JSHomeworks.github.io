@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      font-size: 5rem;
+      font-weight: 600;
+      background: cadetblue;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 10px;
+    }
+    .container div p {
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      color: #666;
+    }
+    input[type='text'] {
+      display: block;
+      text-align: center;
+      margin: 0.5rem 0;
+      padding: 0.65rem 3rem;
+      border-radius: 5px;
+      border: 2px solid cadetblue;
+    }
+    input[type='text']:focus {
+      background: lightskyblue;
+    }
+
+    #check {
+      margin-top: 3rem;
+      padding: 0.7rem 5rem;
+      background: cadetblue;
+      outline: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+    #check:hover {
+      color: #000;
+      background: lightskyblue;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input type="text" id="width" placeholder="width" />
+      <input type="text" id="height" placeholder="height" />
+      <div class="out">
+        <p id="output"></p>
+      </div>
+
+      <input type="submit" onclick="geometry();" id="check" value="check" />
+    </div>
+    <script>
+      let out = document.getElementById('output');
+      let temp = '';
+      function geometry() {
+        let width = document.getElementById('width').value;
+        let height = document.getElementById('height').value;
+
+        if (width != 0 && height != 0) {
+          temp = 'Square is:  = ' + width * height + 'sm<sup>2</sup>';
+        } else if (width != 0 && height == 0) {
+          temp = 'Square is:  = ' + width * width + 'sm<sup>2</sup>';
+        } else if (width == 0 && height != 0) {
+          temp = 'Square is:  = ' + height * height + 'sm<sup>2</sup>';
+        }
+        out.innerHTML = temp;
+      }
+    </script>
+  </body>
+</html>

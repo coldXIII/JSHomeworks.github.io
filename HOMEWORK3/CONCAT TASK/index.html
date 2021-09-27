@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      }
+    </style>
+    <script>
+      let num = 0;
+      function concatinate() {
+        let result = '';
+        for (let i = 0; i < 3; i++) {
+          let num = prompt('Enter any three numbers to see the result');
+          result += num;
+        }
+        document.write(result);
+        return result;
+      }
+      concatinate(num);
+    </script>
+  </body>
+</html>

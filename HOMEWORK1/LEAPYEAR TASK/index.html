@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="leap.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="year" placeholder="enter any year" />
+    <input type="submit" value="check" id="check" onclick="myFunc();" />
+    <script>
+      function myFunc() {
+        var year = document.getElementById('year').value;
+        if (year % 400 === 0 || (year % 4 === 0 && year % 100 != 0)) {
+          alert(year + ' is a leap year');
+        } else {
+          alert(year + ' is not a leap year');
+        }
+      }
+    </script>
+  </body>
+</html>

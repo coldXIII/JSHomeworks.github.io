@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="date.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let date = prompt('Enter the date - day.month.year ');
+      date = date.split('.');
+      let nextDate = new Date(date[2], date[1] - 1, date[0]); 
+      nextDate.setDate(nextDate.getDate() + 1);
+      alert(nextDate);
+    </script>
+  </body>
+</html>

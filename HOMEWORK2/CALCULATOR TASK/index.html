@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <style></style>
+
+    <script>
+      do {
+        var num1 = +prompt('Enter first number...');
+        var num2 = +prompt('And second number...');
+        var sign = prompt('Choose the action - + / *');
+
+        switch (sign) {
+          case '+':
+            alert(num1 + num2);
+            break;
+          case '-':
+            alert(num1 - num2);
+            break;
+          case '/':
+            alert(num1 / num2);
+            break;
+          case '*':
+            alert(num1 * num2);
+          default:
+            break;
+        }
+      } while (confirm('Wanna more?'));
+    </script>
+  </body>
+</html>

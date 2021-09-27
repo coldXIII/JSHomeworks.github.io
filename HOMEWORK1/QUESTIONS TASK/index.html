@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="quest.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="select">
+        <div class="question">
+          <h5>question 1</h5>
+          <p>Who is the author of "Ulysse"?</p>
+        </div>
+        <select name="" id="select1">
+          <option value="James Joyce">James Joyce</option>
+          <option value="Mark Twain">Mark Twain</option>
+          <option value="Franz Kafka">Franz Kafka</option>
+        </select>
+      </div>
+      <div class="select">
+        <div class="question">
+          <h5>question 2</h5>
+          <p>What is "Creme de Cassis?</p>
+        </div>
+        <select name="" id="select2">
+          <option value="Cosmetics">Cosmetics</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Drink">Drink</option>
+        </select>
+      </div>
+      <div class="select">
+        <div class="question">
+          <h5>question 3</h5>
+          <p>Where is the"St.Pauls`s Cathedral"</p>
+        </div>
+        <select name="" id="select3">
+          <option value="Rome">Rome</option>
+          <option value="London">London</option>
+          <option value="Paris">Paris</option>
+        </select>
+      </div>
+      <input id="check" type="submit" value="check" onclick="competition();" />
+    </div>
+
+    <script>
+      function competition() {
+        let author = document.getElementById('select1').value;
+        let creme = document.getElementById('select2').value;
+        let cathedral = document.getElementById('select3').value;
+        let score = 0;
+
+        if (author == 'James Joyce') score += 2;
+        if (creme == 'Drink') score += 2;
+        if (cathedral == 'London') score += 2;
+        alert('Your score is ' + score);
+      }
+    </script>
+  </body>
+</html>

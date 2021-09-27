@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+        font-size: 5rem;
+        font-weight: 600;
+        background: cadetblue;
+        background-size: cover;
+        background-position: center;
+      }
+      .out {
+        background: gray;
+        color: #262626;
+        border: 1px solid black;
+        width: 50vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <div class="out" id="output"></div>
+    <div class="out" id="output2"></div>
+    <div class="out" id="output3"></div>
+    <div class="out" id="output4"></div>
+
+    <script>
+      let time = {
+        hours: 14,
+        minutes: 40,
+        seconds: 35,
+      };
+
+      const settime = function () {
+        let out = (document.getElementById(
+          'output'
+        ).innerHTML = `${time.hours}:${time.minutes}:${time.seconds}`);
+      };
+
+      const changeHours = function () {
+        let changer = +prompt('enter the hours');
+        if (changer > 24) return;
+        if (time.hours > changer || changer + time.hours - 24 < 0) {
+          let out = (document.getElementById('output2').innerHTML = `${
+            time.hours + changer
+          }:${time.minutes}:${time.seconds}`);
+        } else if (time.hours <= changer) {
+          let out = (document.getElementById('output2').innerHTML = `${
+            changer + time.hours - 24
+          }:${time.minutes}:${time.seconds}`);
+        }
+        if (changer + time.hours >= 24 && changer + time.hours - 24 < 10) {
+          out = document.getElementById('output2').innerHTML = `0${
+            changer + time.hours - 24
+          }:${time.minutes}:${time.seconds}`;
+        }
+      };
+
+      const changeMinutes = function () {
+        let changer = +prompt('enter the minutes');
+        if (changer > 60) return;
+        if (time.minutes > changer || changer + time.minutes - 60 < 0) {
+          let out = (document.getElementById('output3').innerHTML = `${
+            time.hours
+          }:${time.minutes + changer}:${time.seconds}`);
+        } else if (time.minutes <= changer) {
+          out = document.getElementById('output3').innerHTML = `${
+            time.hours + 1
+          }:${changer + time.minutes - 60}:${time.seconds}`;
+        }
+        if (changer + time.minutes >= 60 && changer + time.minutes - 60 < 10) {
+          out = document.getElementById('output3').innerHTML = `${
+            time.hours + 1
+          }:0${changer + time.minutes - 60}:${time.seconds}`;
+        }
+      };
+      const changeSeconds = function () {
+        let changer = +prompt('enter the seconds');
+        if (changer > 60) return;
+        if (time.seconds > changer || changer + time.seconds - 60 < 0) {
+          let out = (document.getElementById('output4').innerHTML = `${
+            time.hours
+          }:${time.minutes}:${time.seconds + changer}`);
+        } else if (time.seconds <= changer) {
+          out = document.getElementById('output4').innerHTML = `${time.hours}:${
+            time.minutes + 1
+          }:${changer + time.seconds - 60}`;
+        }
+        if (changer + time.seconds >= 60 && changer + time.seconds - 60 < 10) {
+          out = document.getElementById('output4').innerHTML = `${time.hours}:${
+            time.minutes + 1
+          }:0${changer + time.seconds - 60}`;
+        }
+      };
+
+      settime();
+      changeHours();
+      changeMinutes();
+      changeSeconds();
+    </script>
+  </body>
+</html>
