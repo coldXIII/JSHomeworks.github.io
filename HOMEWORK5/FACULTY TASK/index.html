@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #9796f0, #fbc7d4);
+      }
+    </style>
+    <div class="out"></div>
+    <script>
+      const auditories = [
+        {
+          name: 'Vivisectionary',
+          seats: 13,
+          faculty: 'Biology',
+        },
+        {
+          name: 'Lab',
+          seats: 15,
+          faculty: 'Physics',
+        },
+        {
+          name: 'Reactor',
+          seats: 18,
+          faculty: 'Chemistry',
+        },
+        {
+          name: 'Church',
+          seats: 11,
+          faculty: 'Physics',
+        },
+        {
+          name: 'Black Hole',
+          seats: 16,
+          faculty: 'Astronomy',
+        },
+      ];
+
+      //////////alphabetical sort..............
+      function sortArray(x, y) {
+        if (x.name < y.name) {
+          return -1;
+        }
+        if (x.name > y.name) {
+          return 1;
+        }
+      }
+      auditories.sort(sortArray);
+
+      document.write('<ul style="text-align:center;">');
+      auditories.forEach((rooms) => {
+        document.write(`<li style="list-style:none;">"${rooms.name}"  has  ${rooms.seats}seats, faculty of ${rooms.faculty}
+            <br> <br>`);
+      });
+      document.write('<br>TO SEE THE ACTIONS LOOK INTO THE CONSOLE');
+
+      ///sort by seats...............
+      function sortBySeats(x, y) {
+        if (x.seats < y.seats) {
+          return -1;
+        }
+        if (x.seats > y.seats) {
+          return 1;
+        }
+      }
+      let sortBySeatsResult = auditories.sort(sortBySeats);
+      console.log('sort by seats', sortBySeatsResult);
+
+      ///for chosen faculty............
+
+      let chosenFaculty = auditories
+        .filter((item) => item.faculty == 'Physics')
+        .sort((a, b) => b.faculty - a.faculty);
+      console.log('for chosen faculty', chosenFaculty);
+
+      ///sort by amount of students...............
+      let amountOfStudents = auditories
+        .filter((item) => item.seats >= 14)
+        .sort((a, b) => b.faculty - a.faculty);
+      console.log('for chosen amount of students', amountOfStudents);
+    </script>
+  </body>
+</html>
