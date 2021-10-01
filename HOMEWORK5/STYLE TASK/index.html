@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url(https://wallpaperboat.com/wp-content/uploads/2020/06/13/45435/outer-space-06.jpg);
+        background-size: cover;
+      }
+    </style>
+    <script>
+      const cssStyles = [
+        {
+          name: 'color',
+          value: '#fff',
+        },
+        {
+          name: 'font-size',
+          value: '10rem',
+        },
+        {
+          name: 'font-weight',
+          value: 'bold',
+        },
+        {
+          name: 'text-align',
+          value: 'center',
+        },
+        {
+          name: 'text-transform',
+          value: 'capitalize',
+        },
+        {
+          name: 'margin',
+          value: '12rem auto',
+        },
+      ];
+
+      const writeText = function (text, styles) {
+        const stylesString = styles.map(function (element) {
+          return `${element.name}: ${element.value}`;
+        });
+
+        document.write(`<p style="${stylesString.join(';')}">
+    ${text}
+  </p>`);
+      };
+
+      writeText('cosmos', cssStyles);
+    </script>
+  </body>
+</html>

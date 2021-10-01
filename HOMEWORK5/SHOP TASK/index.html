@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        /* text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2); */
+        box-shadow: 10px -1px 47px -5px rgba(34, 60, 80, 0.15) inset;
+        background: #fff;
+        border-left: 30rem solid black;
+        border-right: 30rem solid black;
+      }
+      p {
+        font-weight: 200;
+      }
+      span {
+        margin-bottom: 5rem;
+        font-size: 0.8rem;
+      }
+    </style>
+    <p>'ATBShop'</p>
+    <span>always behind your back</span>
+    <script>
+      const shoppingList = [
+        {
+          name: 'Bread',
+          price: 1,
+        },
+        {
+          name: 'Steak',
+          price: 8,
+        },
+        {
+          name: 'Apples',
+          price: 0.8,
+        },
+        {
+          name: 'Lasagna',
+          price: 1.4,
+        },
+        {
+          name: 'Beer',
+          price: 1.3,
+        },
+        {
+          name: 'Oranges',
+          price: 0.9,
+        },
+        {
+          name: 'Whiskey',
+          price: 20,
+        },
+      ];
+
+      let sum = 0;
+      let midSum = 0;
+      let theMostExpensiveCost = 0;
+      let theMostExpensiveName = '';
+
+      shoppingList.forEach(function (element) {
+        sum += element.price;
+        midSum = sum / 3;
+        if (element.price > theMostExpensiveCost) {
+          theMostExpensiveName = element.name;
+        }
+      });
+      document.write('<ul style="text-align:center;">');
+      shoppingList.forEach((goods) => {
+        document.write(`<li style="list-style:none;">${goods.name}:  ${goods.price}$
+              <br>`);
+      });
+      document.write(` <br> Sum = ${parseInt(sum)}`);
+      document.write(`<br> Average Cost = ${parseInt(midSum)}`);
+      document.write(`<br>The most expensive = ${theMostExpensiveName}`);
+    </script>
+  </body>
+</html>
