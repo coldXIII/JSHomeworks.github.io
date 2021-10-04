@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 2rem;
+        text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #cac531, #f3f9a7);
+      }
+    </style>
+    <script>
+      class Circle {
+        constructor(radius) {
+          this.radius = radius;
+        }
+        get radiusOfCircle() {
+          return this.radius;
+        }
+        set radiusOfCircle(r) {
+          this.radius = radius;
+        }
+        get diameterOfCircle() {
+          return this.radius * 2;
+        }
+        area() {
+          return Math.PI * this.radius * this.radius;
+        }
+        circumference() {
+          return Math.PI * this.radius * 2;
+        }
+      }
+
+      let newCircle = new Circle(+prompt('Enter the Radius'));
+      document.write(
+        'Radius of circle = ' + newCircle.radiusOfCircle + 'sm <br><br>'
+      );
+      document.write(
+        'Diameter of circle = ' + newCircle.diameterOfCircle + 'sm <br><br>'
+      );
+      document.write(
+        'Area of circle = ' + newCircle.area().toFixed(2) + 'sm2<br><br>'
+      );
+      document.write(
+        'Length of circumference = ' +
+          newCircle.circumference().toFixed(2) +
+          'sm<br><br>'
+      );
+    </script>
+  </body>
+</html>
