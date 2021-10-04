@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <style>
+            * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        text-shadow: 0.3rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to right, #076585, #fff);
+      }
+          ul{
+              list-style: none;
+              line-height: 3.5rem;
+          }
+      </style>
+    <div id="content" class="content">
+    <script>
+      const playList = [
+        {
+          author: 'PINK FLOYD',
+          song: 'High Hopes',
+        },
+        {
+          author: 'KING CRIMSON',
+          song: 'Starless',
+        },
+        {
+          author: 'QUEEN',
+          song: 'The Show Must Go On',
+        },
+        {
+          author: 'YES',
+          song: 'Give Love Each Day',
+        },
+        {
+          author: 'GENESIS',
+          song: 'Dreaming While You Sleep',
+        },
+        {
+          author: 'KANSAS',
+          song: 'Dust In The Wind',
+        },
+        {
+          author: 'ASIA',
+          song: 'Wishing',
+        },
+        {
+          author: 'MARILLION',
+          song: 'Out Of This World',
+        },
+      ];
+      const ul = document.createElement('ul');
+      const mainDiv = document.getElementById('content');
+      mainDiv.appendChild(ul);
+      for (let i in playList) {
+        const li = document.createElement('li');
+        const pContent = document.createElement('p');
+        pContent.append(playList[i].author);
+        pContent.append(' :  ');
+        pContent.append(playList[i].song);
+        li.append(pContent);
+        ul.append(li);
+      }
+    </script>
+  </body>
+</html>
