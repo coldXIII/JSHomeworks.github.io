@@ -1,0 +1,171 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: url(img/cosmos.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: hidden;
+  color: whitesmoke;
+}
+.box {
+  position: relative;
+  width: 35rem;
+  height: 40rem;
+  background: rgba(0, 0, 0, 1);
+  margin: 0.5rem auto;
+}
+
+.box ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.box ul li {
+  margin: 0;
+  padding: 0.5rem;
+  width: 33%;
+  height: 4rem;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  list-style: none;
+  cursor: pointer;
+}
+.box ul li i {
+  color: whitesmoke;
+  font-size: 2rem;
+}
+.box ul li.active,
+.box ul li.active i {
+  color: #f2d27c;
+}
+.hide {
+  display: none;
+}
+.active {
+  display: block;
+}
+.inner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.imagebox {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  flex: 1 1 40rem;
+}
+.imagebox img {
+  width: 100%;
+}
+.imagebox .stars {
+  color: #f2d27c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagebox .stars span {
+  margin: 0.5rem;
+}
+
+.imagebox .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  font-size: 2rem;
+  color: #f2d27c;
+  margin-top: 1rem;
+}
+.textbox {
+  flex: 1 1 40rem;
+  padding: 0.5rem;
+}
+.textbox p {
+  font-size: 0.7rem;
+}
+.textbox h1::after {
+  content: 'space travels';
+  font-size: 0.5rem;
+}
+
+.textbox button {
+  position: absolute;
+  right: 5rem;
+  bottom: 5rem;
+  padding: 0.7rem 1.7rem;
+  background: #f2d27c;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+}
+.textbox button:hover{
+  box-shadow: 0 0 10px #f2d27c,0 0 20px #f2d27c,0 0 30px #f2d27c;
+}
+
+.circular {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+.circular .inner-block {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 100%;
+}
+
+.circular .numb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.circular .bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.circle .bar .progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+  background: #f2d27c;
+}
+.circle .left .progress {
+  z-index: 1;
+  animation: left 4s linear both;
+}
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+.circle .right {
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.circle .right .progress {
+  animation: right 4s linear both;
+  animation-delay: 4s;
+}
+@keyframes right {
+  100% {
+    transform: rotate(180deg);
+  }
+}

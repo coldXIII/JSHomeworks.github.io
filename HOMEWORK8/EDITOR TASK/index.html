@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+        background: linear-gradient(to right, #eb5757, #000000);
+      }
+      p {
+        font-size: 1.7rem;
+      }
+      .show {
+        display: block;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+    <div class="container">
+      <p>
+        Press [Ctrl + E] to edit and then press [Ctrl +] on NumPad to finish editing.
+        <br />
+        <br />
+      </p>
+      <div class="box">
+        <textarea class="editor hide"></textarea>
+        <div class="result">          And the silken, sad, uncertain rustling of each purple curtain<br />
+          Thrilled me—filled me with fantastic terrors never felt before;<br />
+          So that now, to still the beating of my heart, I stood repeating<br />“’Tis
+          some visitor entreating entrance at my chamber door—<br />
+          Some late visitor entreating entrance at my chamber door;—<br />
+          This it is and nothing more.”<br /><br />
+          Presently my soul grew stronger; hesitating then no longer,<br />
+          “Sir,” said I, “or Madam, truly your forgiveness I implore;<br />
+          But the fact is I was napping, and so gently you came rapping,<br />
+          And so faintly you came tapping, tapping at my chamber door,<br />
+          That I scarce was sure I heard you”—here I opened wide the door;<br />—
+          Darkness there and nothing more.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const resultText = document.querySelector('.result');
+      const editorText = document.querySelector('.editor');
+
+      window.addEventListener('keydown', (event) => {
+        if (event.code == 'KeyE' && event.ctrlKey) {
+          event.preventDefault();
+          editorText.classList.remove('hide');
+          resultText.classList.add('hide');
+          editorText.innerText = resultText.innerText;
+        }
+
+        if (event.code == 'NumpadAdd' && event.ctrlKey) {
+          event.preventDefault();
+          editorText.classList.add('hide');
+          resultText.classList.remove('hide');
+          resultText.innerText = editorText.value;
+        }
+      });
+    </script>
+  </body>
+</html>

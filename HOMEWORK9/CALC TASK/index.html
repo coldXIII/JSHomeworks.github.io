@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        background: #ecf0f3;
+        outline: none;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .calculator {
+        background: #ecf0f3;
+        padding: 15px;
+        border-radius: 30px;
+        box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+        display: grid;
+        grid-template-columns: repeat(4, 68px);
+        gap: 0;
+      }
+      input {
+        grid-column: span 4;
+        height: 70px;
+        width: 260px;
+        box-shadow: inset -5px -5px 12px #ffffff,
+          inset 5px 5px 12px rgba(0, 0, 0, 0.16);
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        font-size: 30px;
+        color: rgb(70, 70, 70);
+        text-align: end;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        padding: 20px;
+      }
+
+      button {
+        height: 45px;
+        width: 45px;
+        background: #ecf0f3;
+        box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+        border: none;
+        border-radius: 50%;
+        margin: 8px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .equal {
+        width: 115px;
+        border-radius: 40px;
+        background: #ecf0f3;
+        box-shadow: -5px -5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, 0.16);
+      }
+    </style>
+    <div class="container">
+      <div class="calculator">
+        <input type="text" placeholder="0" id="output-screen" />
+        <button onclick="Clear()">Cl</button>
+        <button onclick="del()">DEL</button>
+        <button onclick="display('%')" value="%">%</button>
+        <button onclick="display('/')" value="/">/</button>
+        <button onclick="display('7')" value="7">7</button>
+        <button onclick="display('8')" value="8">8</button>
+        <button onclick="display('9')" value="9">9</button>
+        <button onclick="display('*')" value="*">*</button>
+        <button onclick="display('4')" value="4">4</button>
+        <button onclick="display('5')" value="5">5</button>
+        <button onclick="display('6')" value="6">6</button>
+        <button onclick="display('-')" value="-">-</button>
+        <button onclick="display('1')" value="1">1</button>
+        <button onclick="display('2')" value="2">2</button>
+        <button onclick="display('3')" value="3">3</button>
+        <button onclick="display('+')" value="+">+</button>
+        <button onclick="display('.')" value=".">.</button>
+        <button onclick="display('0')" value="0">0</button>
+        <button onclick="Calculate()" class="equal">=</button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function display(num) {
+        $('#output-screen').val($('#output-screen').val() + num);
+      }
+      function Calculate() {
+        $('#output-screen').val(eval($('#output-screen').val()));
+      }
+      function Clear() {
+        $('#output-screen').val('');
+      }
+      function del() {
+        value = $('#output-screen').val();
+        $('#output-screen').val(value.substring(0, value.length - 1));
+      }
+    </script>
+  </body>
+</html>
