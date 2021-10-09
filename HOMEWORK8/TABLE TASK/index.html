@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        background: linear-gradient(to right, #eb5757, #000000);
+      }
+      #content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        width: 100vw;
+        margin-left: 5rem;
+      }
+    </style>
+    <div id="content"></div>
+    <script>
+      const mainDiv = document.getElementById('content');
+
+      const tableDiv = document.createElement('div');
+      tableDiv.setAttribute('id', 'content_tableDiv');
+      tableDiv.className = 'content_tableDiv';
+
+      const tableTag = document.createElement('table');
+      tableTag.setAttribute('id', 'content_table');
+      tableTag.className = 'content_table';
+
+      tableDiv.append(tableTag);
+      mainDiv.append(tableDiv);
+
+      class Employee {
+        constructor(name, position, salary) {
+          this.name = name;
+          this.position = position;
+          this.salary = salary;
+        }
+      }
+      const arrEmp = [
+        new Employee('Chandler Bing', 'DevOPS', 5000),
+        new Employee('Monica Geller', 'Team Lead', 4000),
+        new Employee('Reachel Green', 'Java Developer', 3500),
+        new Employee('Phoebe Bouffae', 'Designer', 3000),
+        new Employee('Robyn Scherbatsky', 'SEO', 3000),
+        new Employee('Barnie Stinson', 'ART Director', 4000),
+        new Employee('Lily Aldrin', 'HR', 3000),
+      ];
+      class EmployeeTable {
+        constructor(arr) {
+          this.arr = arr;
+        }
+        getHtml() {
+          const table = document.getElementById('content_table');
+          const array = this.arr;
+          const head = document.createElement('tr');
+          head.setAttribute('style', 'font-size: 1.5rem;');
+          const th1 = document.createElement('th');
+          th1.textContent = 'Name';
+          th1.style.cursor = 'pointer';
+          const th2 = document.createElement('th');
+          th2.textContent = 'Position';
+          th2.style.cursor = 'pointer';
+          const th3 = document.createElement('th');
+          th3.textContent = 'Salary';
+          th3.style.cursor = 'pointer';
+          head.append(th1);
+          head.append(th2);
+          head.append(th3);
+          table.append(head);
+          for (let i in array) {
+            let tr = document.createElement('tr');
+            table.append(tr);
+            for (let j in array[i]) {
+              let td = document.createElement('td');
+              td.textContent = array[i][j];
+              tr.append(td);
+              td.setAttribute(
+                'style',
+                'padding: 1rem 2rem; font-size: 1.2rem;'
+              );
+            }
+          }
+          table.setAttribute('border', '2');
+          table.setAttribute('bordercolor', '#160808');
+          table.setAttribute('width', '60%');
+          table.setAttribute(
+            'style',
+            'margin-left: 3rem; background-color: transparent; border-radius:0.5rem'
+          );
+        }
+      }
+      const tableObj = new EmployeeTable(arrEmp);
+      tableObj.getHtml();
+
+      const getCellValue = (tr, i) =>
+        tr.children[i].innerText || tr.children[i].textContent;
+
+      const comparer = (i, asc) => (a, b) =>
+        ((v1, v2) =>
+          v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2)
+            ? v1 - v2
+            : v1.toString().localeCompare(v2))(
+          getCellValue(asc ? a : b, i),
+          getCellValue(asc ? b : a, i)
+        );
+
+      document.querySelectorAll('th').forEach((th) =>
+        th.addEventListener('click', () => {
+          const table = th.closest('table');
+          Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+            .sort(
+              comparer(
+                Array.from(th.parentNode.children).indexOf(th),
+                (this.asc = !this.asc)
+              )
+            )
+            .forEach((tr) => table.appendChild(tr));
+        })
+      );
+    </script>
+  </body>
+</html>

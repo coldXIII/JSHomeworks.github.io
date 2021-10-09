@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        background: linear-gradient(to right, #eb5757, #000000);
+      }
+
+      #textarea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 35rem;
+        margin: auto;
+        text-align: center;
+        padding: 1rem;
+        border: 2px solid #232323;
+        margin-bottom: 10px;
+      }
+      #resizer {
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+        z-index: 1;
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    <div id="content">
+      <div id="textarea">
+        Once upon a midnight dreary, while I pondered, weak and weary,<br />
+        Over many a quaint and curious volume of forgotten lore <br />While I
+        nodded, nearly napping, suddenly there came a tapping,<br />
+        As of some one gently rapping, rapping at my chamber door.<br />
+        “’Tis some visitor,” I muttered, “tapping at my chamber door <br />Only
+        this and nothing more.” <br /><br />Ah, distinctly I remember it was in
+        the bleak December;<br />
+        And each separate dying ember wrought its ghost upon the floor.<br />
+        Eagerly I wished the morrow; vainly I had sought to borrow <br />From my
+        books surcease of sorrow—sorrow for the lost Lenore <br />
+        For the rare and radiant maiden whom the angels name Lenore <br />
+        Nameless here for evermore.
+        <div id="resizer"></div>
+      </div>
+    </div>
+    <script>
+      const resDiv = document.getElementById('textarea');
+      const resizer = document.getElementById('resizer');
+
+      const initResize = (event) => {
+        event.preventDefault;
+        window.addEventListener('mousemove', startResize);
+        window.addEventListener('mouseup', stopResize);
+      };
+
+      const startResize = (e) => {
+        resDiv.style.width = e.clientX - resDiv.offsetLeft + 'px';
+        resDiv.style.height = e.clientY - resDiv.offsetTop + 'px';
+      };
+      const stopResize = (e) => {
+        window.removeEventListener('mousemove', startResize);
+        window.removeEventListener('mouseup', stopResize);
+      };
+
+      resizer.addEventListener('mousedown', initResize);
+    </script>
+  </body>
+</html>
