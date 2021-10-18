@@ -1,0 +1,81 @@
+.news {
+  background: url(../img/bg2.webp);
+  padding: 3rem;
+
+  .news__title {
+    width: 100%;
+    .line {
+      width: 10rem;
+      height: 0.2rem;
+      background: $white;
+      margin: 7rem auto 1rem;
+    }
+    h1 {
+      @include title($white);
+      margin: 2rem auto;
+      text-align: center;
+    }
+  }
+
+  .news__slider {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .slider {
+      display: flex;
+      width: 80%;
+
+      .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem;
+        margin: 0.5rem;
+        background: transparent;
+        transition: 0.2s ease;
+
+        img {
+          max-width: 100%;
+          object-fit: cover;
+        }
+
+        .text {
+          max-width: 100%;
+          background-color: $white;
+          padding: 1rem;
+
+          h3 {
+            @include title($text_color);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: normal;
+          }
+          p {
+            font-size: 1.5rem;
+          }
+          .card-footer {
+            display: flex;
+            img {
+              width: 7rem;
+            }
+            .name {
+              padding: 2rem;
+
+              p {
+                color: $light-text-color;
+                margin-bottom: 0.5rem;
+              }
+              span {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

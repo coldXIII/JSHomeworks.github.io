@@ -1,0 +1,52 @@
+.footer {
+  height: 80vh;
+  width: 100%;
+  background: url(../img/bg-footer.webp) no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+
+  .footer__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .social {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      margin-left: 5rem;
+
+      li a {
+        text-decoration: none;
+        font-size: 2.1rem;
+        color: $white;
+        margin: 0 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .contact {
+    @include button;
+    margin: 2rem 45% 10rem;
+    color: $white;
+    border: 1px solid $white;
+    transition: all 0.2s ease;
+  }
+  .contact:hover {
+    background: $white;
+    color: $violet;
+    border: 1px solid $white;
+  }
+  .copyright {
+    font-size: 1.5rem;
+    color: $white;
+    margin-top: 5rem;
+  }
+}

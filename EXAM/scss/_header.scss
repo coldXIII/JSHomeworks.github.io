@@ -1,0 +1,83 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3rem 9%;
+  background: transparent;
+  transition: all 0.2s ease;
+
+  .header__logo {
+    position: relative;
+    margin-right: 4rem;
+    img {
+      max-width: 200px;
+    }
+  }
+  .header__navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 1rem;
+      list-style: none;
+    }
+    .fa-circle {
+      font-size: 1rem;
+      border: none;
+      padding: 0;
+      margin: 0 0.5rem;
+    }
+
+    li a {
+      position: relative;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: $white;
+      margin: 0 2rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+    li a:hover {
+      letter-spacing: 0.1rem;
+    }
+    li i {
+      font-size: 1.5rem;
+      margin: 0 1rem;
+      color: $white;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      padding: 0.9rem;
+    }
+    li a:hover i:not(i.fa-circle) {
+      box-shadow: 0 0 15px $white;
+      letter-spacing: normal;
+    }
+  }
+  #menu-btn {
+    font-size: 2.5rem;
+    border-radius: 0.5rem;
+    background: #eee;
+    color: $white;
+    cursor: pointer;
+    background: none;
+    padding: 1rem 1.5rem;
+    display: none;
+  }
+}
+
+.header.fix {
+  padding: 1.5rem 9%;
+  background: $violet;
+}
